@@ -1,7 +1,12 @@
-﻿# Deadlock Mechanisms Simulator
+# Deadlock Mechanisms Simulator
 
 ## Brief description
 A desktop GUI simulator that visualizes deadlock **detection**, **prevention**, and Banker's **avoidance** using a resource-allocation graph.
+
+## Tech stack
+- Python 3
+- Tkinter (GUI)
+- NetworkX (resource-allocation graphs)
 
 ## Project purpose
 Demonstrate classic operating-systems deadlock mechanisms interactively: build processes/resources, claim and assign edges, then analyze safety or deadlocks with clear visual feedback.
