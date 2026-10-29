@@ -1,0 +1,180 @@
+How to use project :D [bueno guide]
+1. Add Resource
+Click “Add Resource”.
+
+Enter a unique name (like R1).
+
+Enter the total number of instances (must be a positive number).
+
+The resource (orange rectangle) will appear on the graph.
+
+2. Add Process
+Click “Add Process”.
+
+Enter a unique process name (like P1).
+
+The process (blue circle) will appear on the graph.
+
+3. Select Mode
+Choose one of these from the left toolbar:
+
+Detection: Allows any requests. Use “Check” to find deadlocks.
+
+Avoidance: Uses Banker's algorithm. Only allows assignments that keep the system safe.
+
+Prevention: Only allows requests that follow a safe resource order.
+---------------------------------------------------
+How to Use Each Mode
+3.1 Detection Mode
+Goal:
+Allows any requests/assignments. Use “Check” to see if a deadlock exists.
+
+Steps:
+Set mode to “Detection” (select in the sidebar).
+
+Add resources and add processes.
+
+Claim request edges: Click “Claim Request Edge,” enter process/resource/max need.
+
+Assign resources: Click “Assign Edge,” enter resource/process/allocation.
+
+Repeat as needed; you can make any requests or assignments.
+
+Click “Check” to analyze the system.
+
+If there’s a deadlock, a warning will appear.
+
+If safe, you’ll see a safe state message.
+
+Show Data Structures at any time to view the system’s matrices.
+---------------------------------------------------
+3.2 Avoidance Mode (Banker’s Algorithm)
+Goal:
+Only allows assignments if the system stays in a safe state.
+
+Steps:
+Set mode to “Avoidance” (select in the sidebar).
+
+Add resources and add processes.
+
+Claim request edges: As above, enter process/resource/max need.
+
+Assign resources:
+
+Click “Assign Edge,” enter resource/process/allocation.
+
+The system will check Banker's algorithm.
+
+If the request keeps the system safe, the assignment is allowed.
+
+If it would cause a possible deadlock, the assignment is blocked, and you’ll see a warning.
+
+Repeat as needed, adjusting requests and assignments.
+
+Show Data Structures to see all matrices at any point.
+
+No need to click “Check”—all checks happen automatically on assignment.
+---------------------------------------------------
+3.3 Prevention Mode (Resource Ordering)
+Goal:
+Blocks requests that violate a safe, pre-defined resource order (e.g., R1 < R2 < R3).
+
+Steps:
+Set mode to “Prevention” (select in the sidebar).
+
+Add resources and add processes.
+
+Claim request edges:
+
+Click “Claim Request Edge.”
+
+Enter process/resource/max need.
+
+The system will only allow requests that follow the resource order.
+
+If a process already holds a higher-order resource, it cannot request a lower one.
+
+Unsafe requests are blocked with a message.
+
+Assign resources as needed.
+
+Show Data Structures to see all current info.
+
+No need to click “Check”—the simulator blocks invalid requests automatically.
+---------------------------------------------------
+4. Claim Request Edge
+Click “Claim Request Edge”.
+
+Enter the process name (e.g., P1).
+
+Enter the resource name (e.g., R1).
+
+Enter the maximum number of this resource the process might need.
+
+A red arrow will appear from the process to the resource.
+---------------------------------------------------
+5. Assign Edge
+Click “Assign Edge”.
+
+Enter the resource name (e.g., R1).
+
+Enter the process name (e.g., P1).
+
+Enter the number of instances to assign (must be ≤ resource’s available instances).
+
+A green arrow will appear from the resource to the process.
+---------------------------------------------------
+6. Check (Analyze State)
+Click “Check”.
+
+In Detection mode: Finds and shows if there is a deadlock.
+
+In Avoidance mode: Tells you to use Assign Edge (checks are made during assignment).
+
+In Prevention mode: Tells you that unsafe requests are automatically blocked.
+---------------------------------------------------
+7. Show Data Structures
+Click “Show Data Structures”.
+
+A pop-up shows:
+
+Max matrix: Each process’s max resource needs
+
+Allocation matrix: What’s currently assigned
+
+Need matrix: What’s still needed
+
+Available vector: What’s available
+---------------------------------------------------
+8. Reset
+Click “Reset” to clear everything and start over.
+
+How to Build a Scenario
+Add all needed resources and processes.
+
+For each process, claim a request edge for each resource it might need.
+
+Assign resources as desired (one or more at a time).
+
+Switch between modes if you want to test different behaviors.
+
+Use Check and Show Data Structures to analyze system state.
+
+Reset to build a new scenario.
+---------------------------------------------------
+Visual Legend
+Blue Circle: Process
+
+Orange Rectangle: Resource
+
+Red Arrow: Process requests resource
+
+Green Arrow: Resource assigned to process
+---------------------------------------------------
+Tips
+Only enter valid, unique names and positive numbers.
+
+You must add resources and processes before creating edges.
+
+If you make a mistake, use Reset and try again.
+[in hope for a good grade]
